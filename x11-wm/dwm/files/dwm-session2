@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PATH="${HOME}/.local/bin${PATH:+:}$PATH"
+
+exec /usr/bin/dwm
