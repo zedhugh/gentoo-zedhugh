@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zedhugh@gmail.com</email>
+		<name>Zedhugh Chen</name>
+	</maintainer>
+	<use>
+		<flag name="darkterm">Improve readability of color output on terminals with
+		dark background.</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">Dushistov/sdcv</remote-id>
+	</upstream>
+</pkgmetadata>
