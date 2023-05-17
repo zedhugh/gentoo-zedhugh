@@ -1,0 +1,52 @@
+#!/sbin/openrc-run
+# Copyright 1999-2023 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+SS_CONFIG="/etc/shadowsocks-rust/config.json"
+
+SS_PIDFILE="/run/shadowsocks-rust.pid"
+
+depend() {
+    need net
+}
+
+checkconfig() {
+    if [ ! -f ${SS_CONFIG} ]; then
+        ewarn "${SS_CONFIG} does not exist."
+    fi
+
+    SS_SVCNAME="${RC_SVCNAME#*.}"
+    case ${SS_SVCNAME} in
+    client)
+        SS_COMMAND="/usr/bin/sslocal"
+	return 0
+	;;
+    server)
+        SS_COMMAND="/usr/bin/ssserver"
+	return 0
+	;;
+    *)
+    	eerror "please choose to run as server or client mode"
+    	eerror "  server: rc-update add shadowsocks-rust.server default"
+    	eerror "  client: rc-update add shadowsocks-rust.client default"
+        return 1
+    	;;
+    esac
+}
+
+start() {
+    checkconfig || return 1
+
+    ebegin "Starting shadowsocks-rust: ${SS_SVCNAME} mode"
+    start-stop-daemon --start --exec ${SS_COMMAND} \
+	-- -c ${SS_CONFIG} --daemonize --daemonize-pid ${SS_PIDFILE}
+    eend $?
+}
+
+stop() {
+    ebegin "Stopping shadowsocks-rust"
+    start-stop-daemon --stop \
+	--user nobody --group nobody \
+	--pidfile ${SS_PIDFILE}
+    eend $?
+}
