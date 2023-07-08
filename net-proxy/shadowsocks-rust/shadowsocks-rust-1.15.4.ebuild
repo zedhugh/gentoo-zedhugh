@@ -232,10 +232,10 @@ CRATES="
 	serde_yaml-0.8.26
 	sha1-0.10.5
 	sha2-0.10.6
-	shadowsocks-1.15.3
+	shadowsocks-1.15.4
 	shadowsocks-crypto-0.5.1
-	shadowsocks-rust-1.15.3
-	shadowsocks-service-1.15.3
+	shadowsocks-rust-1.15.4
+	shadowsocks-service-1.15.4
 	signal-hook-registry-1.4.1
 	signature-1.6.4
 	siphasher-0.3.10
