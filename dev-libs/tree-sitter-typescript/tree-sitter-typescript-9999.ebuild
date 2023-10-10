@@ -20,11 +20,9 @@ if [[ ${PV} == *9999* ]]; then
 	EGIT_BRANCH="master"
 	EGIT_CHECKOUT_DIR="${WORKDIR}/${PN}-${PV}"
 	SRC_URI=""
-	KEYWORDS="~amd64"
 else
-	KEYWORDS="amd64"
+	KEYWORDS="~amd64"
 fi
-
 
 S="${WORKDIR}"/${PN}-${PV}/typescript/src
 
