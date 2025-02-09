@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>zedhugh@gmail.com</email>
+    <name>Zedhugh Chen</name>
+  </maintainer>
+  <longdescription>
+    EPC is an RPC stack for Emacs Lisp and Python-EPC is its server side and
+    client side implementation in Python.
+  </longdescription>
+  <upstream>
+    <remote-id type="github">tkf/python-epc</remote-id>
+    <maintainer type="person">
+      <email>aka.tkf@gmail.com</email>
+    </maintainer>
+    <maintainer type="person">
+      <email>immerrr@gmail.com</email>
+    </maintainer>
+  </upstream>
+</pkgmetadata>
